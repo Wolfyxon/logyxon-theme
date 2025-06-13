@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <main>
+            <h1 id="typer">
+                <span id="typer-text">Hi</span>
+                <span id="typer-blink"></span>
+            </h1>
+
+            <div id="sides">
+                <div id="clock">
+                    <h1 id="time">12:00</h1>
+                    <h2 id="date">13 June, Friday</h2>
+                </div>
+        
+                <form id="login-panel">
+                    <div id="hostname">@pcName</div>
+                    <div id="user-container">
+                        <!-- TODO: Custom <select>. It's not stylable on webkit -->
+                        
+                        <select id="user-select">
+                            <option>Other...</option>
+                        </select>
+                        
+                        <input type="text" id="username" placeholder="Username...">
+                    </div>
+    
+                    <input type="password" id="password" placeholder="Password...">
+                    
+                    <select id="session-select"></select>
+
+                    <button type="submit" id="login-btn">Authenticate</button>
+                </form>
+            </div>
+
+            <div id="controls">
+                <img src="./assets/img/power.svg" alt="Shut down">
+                <img src="./assets/img/restart.svg" alt="Restart">
+                <img src="./assets/img/hibernate.svg" alt="Hibernate">
+            </div>
+        </main>
+    </body>
+</html>

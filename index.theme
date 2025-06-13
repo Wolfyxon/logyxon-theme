@@ -1,0 +1,4 @@
+[theme]
+name=Logyxon
+engine=lightdm-webkit2-greeter
+url=index.html

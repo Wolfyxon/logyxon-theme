@@ -1,0 +1,160 @@
+:root {
+    --accent: rgb(255, 49, 49);
+    --accent-hover: rgb(161, 30, 30);
+    --accent-off: rgb(85, 0, 0);
+    accent-color: var(--accent);
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: var(--accent);
+    overflow: hidden;
+    font-size: 2vh;
+}
+
+main {
+    width: 100%;
+    margin: 10% auto;
+}
+
+select {
+    appearance: none;
+    background: url("./assets/img/arrow-down.svg") !important;
+    background-repeat: no-repeat !important;
+    background-position-x: 100% !important;
+    background-position-y: 5px !important;
+    padding-right: 2em !important;
+}
+
+#sides {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: fit-content;
+    margin: 20px auto;
+    border-bottom: 5px solid var(--accent-hover);
+}
+
+#typer {
+    height: 2em;
+}
+
+#typer-blink {
+    display: inline-block;
+    background-color: var(--accent-hover);
+    animation: blink infinite 1s;
+    height: 3px;
+    width: 15px;
+}
+
+#clock {
+    vertical-align: top;
+}
+
+#time {
+    font-size: 500%;
+    margin-top: 0;
+}
+
+#login-panel {
+    min-width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    color: var(--accent);
+    background: none;
+    border: none;
+    border-bottom: 2px var(--accent-off) solid;
+    font-size: 120%;
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    border-radius: 2px;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-bottom-color: var(--accent);
+}
+
+button {
+    background: var(--accent-off);
+    color: var(--accent);
+    border: none;
+    padding: 5px;
+    font-size: 100%;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+    color: white;
+}
+
+button:focus {
+    outline: 2px solid var(--accent-hover);
+}
+
+button:active {
+    background-color: var(--accent);
+    color: white;
+}
+
+#hostname {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+#user-container {
+    display: flex;
+    gap: 5px;
+}
+
+#user-select {
+    flex: 1;
+}
+
+#username {
+    flex: 2;
+}
+
+#controls > * {
+    background-color: var(--accent-off);
+    padding: 10px;
+    border-radius: 100%;
+    transition: 0.1s;
+    height: 1.5em;
+}
+
+#controls > *:hover {
+    background-color: var(--accent-hover);
+}
+
+#controls > *:active {
+    background-color: var(--accent);
+}
