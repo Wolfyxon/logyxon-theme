@@ -49,6 +49,19 @@ window.addEventListener("load", () => {
     const date = document.getElementById("date");
 
     const sessionSel = document.getElementById("session-select");
+    const controls = document.getElementById("controls");
+
+    function addControl(icon, alt, callback) {
+        const img = document.createElement("img");
+        img.src = "./assets/img/" + icon;
+        img.alt = alt;
+
+        img.addEventListener("click", () => {
+            callback();
+        });
+
+        controls.append(img);
+    }
 
     function update() {
         const now = new Date();
@@ -56,6 +69,16 @@ window.addEventListener("load", () => {
         time.innerText = `${now.getHours()}:${now.getMinutes()}`;
         date.innerText = `${now.getDate()} ${MONTHS[now.getMonth()]}, ${DAYS[now.getDay() - 1]}`;
     }
+
+    addControl("power.svg", "Shut down", () => {
+        
+    });
+    addControl("restart.svg", "Restart", () => {
+
+    });
+    addControl("hibernate.svg", "Hibernate", () => {
+
+    });
 
     setInterval(update, 1000);
     update();
@@ -72,7 +95,7 @@ window.addEventListener("load", () => {
             document.getElementById("hostname").innerText = "@" + lightdm.hostname;
         
             for(const user of lightdm.users) {
-                
+
             }
 
             for(const session of lightdm.sessions) {
