@@ -49,6 +49,8 @@ window.addEventListener("load", () => {
     const date = document.getElementById("date");
 
     const sessionSel = document.getElementById("session-select");
+    const userSel = document.getElementById("user-select");
+    
     const controls = document.getElementById("controls");
 
     function addControl(icon, alt, callback) {
@@ -94,8 +96,12 @@ window.addEventListener("load", () => {
         setTimeout(() => {
             document.getElementById("hostname").innerText = "@" + lightdm.hostname;
         
-            for(const user of lightdm.users) {
-
+            if(!lightdm.hide_users) {
+                for(const user of lightdm.users) {
+                    const opt = document.createElement("option");
+                    opt.innerText = user.name;
+                    userSel.append(opt);
+                }
             }
 
             for(const session of lightdm.sessions) {
