@@ -1,12 +1,12 @@
 
 const DAYS = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday"
 ];
 
 const MONTHS = [
@@ -67,7 +67,7 @@ window.addEventListener("load", () => {
         const now = new Date();
 
         time.innerText = `${now.getHours()}:${now.getMinutes()}`;
-        date.innerText = `${now.getDate()} ${MONTHS[now.getMonth()]}, ${DAYS[now.getDay() - 1]}`;
+        date.innerText = `${now.getDate()} ${MONTHS[now.getMonth()]}, ${DAYS[now.getDay()]}`;
     }
 
     addControl("power.svg", "Shut down", () => {
