@@ -47,6 +47,10 @@ function isLock() {
     return lightdmMode() && lightdm.lock_hint;
 }
 
+function pad(n) {
+    return String(n).padStart(2, "0")
+}
+
 window.addEventListener("load", () => {
     const form = document.getElementById("login-panel");
     const time = document.getElementById("time");
@@ -72,7 +76,7 @@ window.addEventListener("load", () => {
     function update() {
         const now = new Date();
 
-        time.innerText = `${now.getHours()}:${now.getMinutes()}`;
+        time.innerText = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
         date.innerText = `${now.getDate()} ${MONTHS[now.getMonth()]}, ${DAYS[now.getDay()]}`;
     }
 
