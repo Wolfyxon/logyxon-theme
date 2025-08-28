@@ -24,8 +24,12 @@ const MONTHS = [
     "December"
 ];
 
+function getTyper() {
+    return document.getElementById("typer-text");
+}
+
 function typeMsg(text) {
-    const typer = document.getElementById("typer-text");
+    const typer = getTyper()
     typer.innerText = "";
 
     for(let i = 0; i < text.length; i++) {
@@ -83,13 +87,16 @@ window.addEventListener("load", () => {
     });
 
     setInterval(update, 1000);
+    
     update();
 
-    if(isLock()) {
-        typeMsg("Please reauthenticate");
-    } else {
-        typeMsg("Welcome");
-    }
+    setTimeout(() => {
+        if(isLock()) {
+            typeMsg("Please reauthenticate");
+        } else {
+            typeMsg("Welcome");
+        }
+    }, 500);
 
     if(lightdmMode()) {
         // Temp fix
@@ -115,4 +122,6 @@ window.addEventListener("load", () => {
     form.onsubmit = (e) => {
         e.preventDefault();
     }
+
+    getTyper().innerText = "";
 });
